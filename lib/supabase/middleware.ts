@@ -1,16 +1,23 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
+const publicRoutes = ['/login', '/signup', '/auth'];
+const apiRoutes = '/api';
+
 export async function updateSession(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Allow public routes and API routes to pass through
+  if (publicRoutes.some(route => pathname.startsWith(route)) || pathname.startsWith(apiRoutes)) {
+    return NextResponse.next({ request });
+  }
+
   const supabaseResponse = NextResponse.next({ request });
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   // If Supabase isn't configured, skip the auth refresh and pass through.
-  // Without this guard createServerClient throws "Your project's URL and Key
-  // are required", crashing the edge middleware on every route (500
-  // MIDDLEWARE_INVOCATION_FAILED).
   if (!url || !anonKey) {
     return supabaseResponse;
   }
@@ -33,6 +40,14 @@ export async function updateSession(request: NextRequest) {
         },
       },
     });
+
+    // Get current session
+    const { data: { session } } = await supabase.auth.getSession();
+
+    // If no session and not on public route, redirect to login
+    if (!session && pathname !== '/' && !publicRoutes.some(route => pathname.startsWith(route))) {
+      return NextResponse.redirect(new URL('/login', request.url));
+    }
 
     // Refresh session so it doesn't expire while user is active
     await supabase.auth.getUser();
