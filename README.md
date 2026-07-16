@@ -1,3 +1,4 @@
+# ArusInovasi CRM - LIVE 🚀
 # 🏥 ArusInovasi CRM - Medical Device Management System
 
 **Production-Ready Full-Stack CRM** | Next.js 15 | Supabase | TypeScript | AI-Powered
