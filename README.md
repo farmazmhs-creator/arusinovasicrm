@@ -1,41 +1,100 @@
-# vibe-stack-supabase
+# 🏥 ArusInovasi CRM - Medical Device Management System
 
-Next.js 15 + Supabase starter for shipping vibe-coded apps fast. Clone, provision, build.
+**Production-Ready Full-Stack CRM** | Next.js 15 | Supabase | TypeScript | AI-Powered
 
-## Stack
+![Status](https://img.shields.io/badge/status-production--ready-green)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
 
-| Layer | Choice |
-|---|---|
-| Framework | Next.js 15 (App Router, React 19, Server Actions) |
-| Language | TypeScript strict |
-| Styles | Tailwind CSS v4 (CSS-first, no config file) |
-| Auth + DB | Supabase (`@supabase/ssr`) |
-| Package manager | Bun |
-| Deploy | Vercel |
-
-## Quick start
+## 🚀 Deploy in 15 Minutes
 
 ```bash
-bun install
-cp .env.example .env.local   # fill in your Supabase keys
-bun dev
+git clone https://github.com/farmazmhs-creator/arusinovasicrm.git
+cd arusinovasicrm
+npm install
+# Edit .env.local with Supabase + Resend keys
+vercel --prod
 ```
 
-Open http://localhost:3000. Edit `app/page.tsx` to start building.
+**See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.**
 
-## Provisioning a new project
+## ✨ 12-Sprint Feature Set
 
-Use the `/new-vibe-project <name>` skill (see `claude-dotfiles` repo) which:
-1. Clones this template and renames it
-2. Creates a new GitHub repo and pushes
-3. Creates a Supabase project and injects URL + anon key
-4. Creates a Vercel project linked to the GitHub repo
-5. Triggers first deploy and returns the preview URL
+### Sprints 1-5: Core CRM (v1 Functional)
+✅ Quotations with versioning + audit logs
+✅ PO management with delivery tracking
+✅ Inventory allocation tracking
+✅ Kanban pipeline (drag-drop)
+✅ Customer activity timeline
+✅ 7 automation rules
+✅ Notifications inbox
+✅ Director approval queue
+✅ Global search
+✅ Task management
 
-## Working with AI
+### Sprint 6: Enterprise Security
+✅ Email/password authentication
+✅ 4 roles (sales_rep, ops, director, admin)
+✅ Row-Level Security (database-enforced)
+✅ User menu + logout
 
-See [CLAUDE.md](CLAUDE.md) for conventions. This repo is pre-wired for gstack — start with `/office-hours`.
+### Sprint 7: Advanced Analytics
+✅ Sales rep dashboard (quotations, conversion, trend)
+✅ Ops dashboard (fulfillment, on-time %, alerts)
+✅ Director dashboard (revenue, pipeline, team metrics)
+✅ No-code report builder
+✅ CSV export
 
-## Switching to Neon
+### Sprint 8: AI Deal Scoring
+✅ Deal score (0-100) with risk flags
+✅ Customer health score (churn risk + upsell)
+✅ RFM customer segmentation
+✅ Scoring dashboard
 
-If you need Postgres without Supabase (e.g. prefer Drizzle ORM + Clerk for auth), a `vibe-stack-neon` variant is planned. For now: fork this and swap `@supabase/ssr` for `drizzle-orm` + `@neondatabase/serverless`, add Clerk or NextAuth.
+### Sprint 9: Email Integration
+✅ 7 transactional email templates
+✅ Resend integration
+✅ Event-driven notifications
+✅ High-value deal alerts
+✅ Churn risk notifications
+
+### Sprint 10: Advanced Analytics (Cutting Edge!)
+✅ 3-month revenue forecasting (linear regression)
+✅ Cohort analysis (retention, LTV, churn)
+✅ Sales rep performance ranking
+✅ Pipeline velocity metrics
+
+### Sprint 11: Mobile API & Framework
+✅ Mobile-optimized endpoints
+✅ Offline-first sync
+✅ White-label customization
+✅ Industry templates (medtech, enterprise)
+✅ Webhook integration
+
+### Sprint 12: AI Assistant (Cutting Edge!)
+✅ Claude Opus deal analysis
+✅ Auto-generated follow-up emails
+✅ Pricing strategy recommendations
+✅ Customer engagement scoring
+
+## 📊 Dashboard Examples
+
+**Sales Rep Dashboard:**
+- Total quotes, approved, pending approval counts
+- 75% conversion rate
+- 8-day average to close
+- 4-month approval trend
+
+**Ops Dashboard:**
+- 42 total POs, 38 delivered, 3 partial
+- 95% on-time rate
+- 5-day average delivery
+- 2 stock alerts
+
+**Director Dashboard:**
+- RM 450K total revenue (YTD)
+- RM 320K pipeline value
+- 92% approval rate
+- 8 active sales reps
+
+**AI Assistant:**
+- Deal score: 92/100 → "Highly likely to approve"
