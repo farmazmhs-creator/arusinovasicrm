@@ -26,7 +26,6 @@ export default function LoginPage() {
 
       if (authError) throw authError;
 
-      // Redirect to home
       router.push('/');
       router.refresh();
     } catch (err) {
@@ -40,7 +39,6 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="w-full max-w-md">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          {/* Header */}
           <div className="flex items-center justify-center gap-2 mb-8">
             <LogIn className="text-blue-600" size={32} />
             <h1 className="text-3xl font-bold text-gray-900">ArusInovasi</h1>
@@ -50,14 +48,12 @@ export default function LoginPage() {
             Medical device CRM — Sales & Operations
           </p>
 
-          {/* Error */}
           {error && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
               <p className="text-red-800 text-sm font-medium">{error}</p>
             </div>
           )}
 
-          {/* Form */}
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -96,25 +92,8 @@ export default function LoginPage() {
             </button>
           </form>
 
-          {/* Demo */}
-          <div className="mt-6 pt-6 border-t">
-            <p className="text-sm text-gray-600 text-center mb-3">
-              Demo credentials (auto-created on first signup):
-            </p>
-            <div className="bg-blue-50 rounded p-3 text-xs text-blue-900 space-y-1">
-              <p><strong>Sales Rep:</strong> rep@arusinovasi.com</p>
-              <p><strong>Ops:</strong> ops@arusinovasi.com</p>
-              <p><strong>Director:</strong> director@arusinovasi.com</p>
-              <p><strong>Password:</strong> Demo@123456</p>
-            </div>
-          </div>
-
-          {/* Signup Link */}
           <p className="text-center text-sm text-gray-600 mt-6">
-            Don't have an account?{' '}
-            <a href="/signup" className="text-blue-600 hover:underline font-medium">
-              Sign up
-            </a>
+            Don't have an account? <a href="/signup" className="text-blue-600 hover:underline font-medium">Sign up</a>
           </p>
         </div>
       </div>
